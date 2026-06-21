@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { Admin } from "../models/admin.model.js";
+import { Admin } from "../models/Admin.model.js";
 
 
 const createAdmin = async (req, res) => {

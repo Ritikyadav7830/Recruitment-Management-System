@@ -1,4 +1,4 @@
-import { Candidate } from "../models/candidate.model.js";
+import { Candidate } from "../models/Candidate.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 
