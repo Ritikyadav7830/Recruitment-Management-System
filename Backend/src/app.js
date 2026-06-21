@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://your-frontend-url.onrender.com"
+        "https://recruitment-management-system-two.vercel.app"
     ],
     credentials: true
 }));
