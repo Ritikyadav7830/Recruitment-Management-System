@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 import axios from "axios";
 
 function CandidateDetails() {
@@ -13,7 +14,7 @@ function CandidateDetails() {
     const fetchCandidate = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/candidates/${id}`
+          `${API_URL}/api/v1/candidates/${id}`
         );
 
         setCandidate(response.data.candidate);

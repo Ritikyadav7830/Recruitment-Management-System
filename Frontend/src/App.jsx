@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import {login,logout} from "./redux/AuthSlice"
+import { API_URL } from "./config";
 import axios from "axios";
 
 import MainLayout from "./layouts/MainLayout";
@@ -25,7 +26,7 @@ function App() {
       try {
 
         const response = await axios.get(
-          "http://localhost:8000/api/v1/admin/current-admin",
+          `${API_URL}/api/v1/admin/current-admin`,
           {
             withCredentials: true,
           }

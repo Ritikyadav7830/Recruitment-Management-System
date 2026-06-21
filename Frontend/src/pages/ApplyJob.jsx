@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../config";
 import axios from "axios"
 
 
@@ -99,7 +100,7 @@ function ApplyJob() {
       );
 
       const response = await axios.post(
-        "http://localhost:8000/api/v1/candidates/apply",
+        `${API_URL}/api/v1/candidates/apply`,
         data,
            {
       withCredentials: true,

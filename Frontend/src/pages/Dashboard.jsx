@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 import axios from "axios";
 
 function Dashboard() {
@@ -19,7 +20,7 @@ function Dashboard() {
   try {
 
     const response = await axios.patch(
-      `http://localhost:8000/api/v1/candidates/shortlist/${id}`
+      `${API_URL}/api/v1/candidates/shortlist/${id}`
     );
 
     // console.log(response.data);
@@ -39,7 +40,7 @@ function Dashboard() {
   try {
 
     const response = await axios.patch(
-      `http://localhost:8000/api/v1/candidates/reject/${id}`
+      `${API_URL}/api/v1/candidates/reject/${id}`
     );
 
     // console.log(response.data);
@@ -61,7 +62,7 @@ function Dashboard() {
   const fetchCandidates = async () => {
  
   const response = await axios.get(
-  `http://localhost:8000/api/v1/candidates/getAllCandidates?page=${page}&limit=5`,
+  `${API_URL}/api/v1/candidates/getAllCandidates?page=${page}&limit=5`,
   {
    withCredentials: true,
   } 
@@ -78,7 +79,7 @@ function Dashboard() {
   const handleSearch = async ()=>{
     try {
         const response = await axios.get(
-        `http://localhost:8000/api/v1/candidates/search?page=${page}&limit=5&search=${search}`,
+        `${API_URL}/api/v1/candidates/search?page=${page}&limit=5&search=${search}`,
          {
           withCredentials: true,
          } 

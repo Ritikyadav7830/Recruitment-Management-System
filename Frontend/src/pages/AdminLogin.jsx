@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { login } from "../redux/authSlice";
+import { API_URL } from "../config";
 import axios from "axios"
 
 function AdminLogin() {
@@ -29,7 +30,7 @@ function AdminLogin() {
     try{
       setLoading(true);
      const response =await axios
-     .post("http://localhost:8000/api/v1/admin/login",
+     .post(`${API_URL}/api/v1/admin/login`,
       formData,
      {
       withCredentials: true,

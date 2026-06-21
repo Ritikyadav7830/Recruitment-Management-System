@@ -134,8 +134,8 @@ const adminLogin = async (req, res) => {
     .status(200)
     .cookie("accessToken", token, {
     httpOnly: true,
-    secure: false, // localhost ke liye
-    sameSite: "lax",
+    secure: true, 
+    sameSite: "none",
   })
     .json({
       success: true,
@@ -157,7 +157,11 @@ const adminLogin = async (req, res) => {
 const logoutAdmin = (req, res) => {
 
   return res
-    .clearCookie("accessToken")
+    .clearCookie("accessToken", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+})
     .status(200)
     .json({
       success: true,

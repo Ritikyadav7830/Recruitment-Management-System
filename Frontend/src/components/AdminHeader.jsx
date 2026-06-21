@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { logout } from "../redux/AuthSlice";
+import { API_URL } from "../config";
 
 function AdminHeader() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function AdminHeader() {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:8000/api/v1/admin/logout",
+        `${API_URL}/api/v1/admin/logout`,
         {},
         {
           withCredentials: true,
