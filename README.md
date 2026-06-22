@@ -4,7 +4,7 @@ A full-stack Recruitment Management System built using the MERN stack that strea
 
 ## Live Demo
 
-🌐 Frontend: https://your-frontend-url.vercel.app
+🌐 Frontend: https://recruitment-management-system-two.vercel.app
 
 ---
 
